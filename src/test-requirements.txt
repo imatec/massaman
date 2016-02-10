@@ -1,0 +1,10 @@
+Flask-Bootstrap==3.3.5.7
+Flask-Login==0.3.2
+Flask-Migrate==1.7.0
+Flask-WTF==0.12
+argparse==1.2.1
+nose==1.3.7
+psycopg2==2.6.1
+pytz==2015.7
+six==1.10.0
+wsgiref==0.1.2
