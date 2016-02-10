@@ -67,7 +67,7 @@ $ virtualenv venv
 $ source venv/bin/activate
 (venv)$ pip install -r stable-req.txt
 $ deactivate
-...
+```
 si fallara la instalacion de algunos paquetes por dependencias:
 - reportlab / Pillow -> sudo apt-get build-dep python-imaging --fix-missing
 - psycopg2 -> sudo apt-get install libpq-dev
