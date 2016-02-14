@@ -17,7 +17,10 @@ def login():
     #     return redirect(url_for('.login', _external=True, _scheme='https'))
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
+        username = form.username.data
+        if User.rut_is_username:
+            username = username.upper()
+        user = User.query.filter_by(username=username).first()
         if user is None or not user.verify_password(form.password.data):
             flash(u"Usuario o contraseña invalidos.")
             return redirect(url_for('.login'))
