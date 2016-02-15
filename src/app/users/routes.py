@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 from flask import render_template, current_app, request, redirect, url_for, \
-    flash, jsonify
+    flash, jsonify, session
 from flask.ext.login import login_user, logout_user, login_required, current_user
 from .models import User
 from . import users_bp
@@ -46,6 +46,7 @@ def index():
 @users_bp.route('/logout')
 @login_required
 def logout():
+    session.clear()
     logout_user()
     flash('Usted ha salido.')
     return redirect(url_for('.index'))
